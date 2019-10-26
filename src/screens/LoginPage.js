@@ -32,7 +32,7 @@ class LoginPage extends Component {
   //  const {homePageRef} = this.props
 
     return(
-        <KeyboardAvoidingView style={[styles.container, styles.avoidView]} behavior='padding'>
+        <KeyboardAvoidingView style={[styles.container, styles.avoidView]} keyboardVerticalOffset={-500} behavior='padding'>
           <View style={styles.scrollViewWrapper}>
             <ScrollView style={styles.scrollView}>
               <Text style={styles.loginText}>Login</Text>
@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
   scrollView:{
+    flex:1,
   },
   nextArrowButton:{
     flex: 1
