@@ -8,12 +8,12 @@ import {
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
-import Home from './app/components/Home';
-import Login from './app/components/Login';
+import HomePage from './src/screens/HomePage';
+import LoginPage from './src/screens/LoginPage';
 
 const AppNavigator = createStackNavigator({
-    login: Login,
-    home: Home
+    login: LoginPage,
+    home: HomePage
   },
   {
     headerMode: 'none',
