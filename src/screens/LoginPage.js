@@ -5,8 +5,11 @@ import {
   Text,
   ScrollView,
   KeyboardAvoidingView,
-  Alert
+  Alert,
+  AsyncStorage
 } from 'react-native';
+
+import {withNavigation} from 'react-navigation'
 
 import NextArrowButton from 'NavigationApp/src/components/buttons/NextArrowButton'
 
@@ -17,7 +20,7 @@ class LoginPage extends Component {
   constructor(props) {
     super(props)
 
-    this.onNextButtonPressed = this.onNextButtonPressed.bind(this);
+    this._onNextButtonPressed = this._onNextButtonPressed.bind(this);
     this._onChangeEmail = this._onChangeEmail.bind(this);
     this._onChangePassword = this._onChangePassword.bind(this);
 
@@ -29,7 +32,6 @@ class LoginPage extends Component {
 
   render(){
 
-  //  const {homePageRef} = this.props
 
     return(
         <KeyboardAvoidingView style={[styles.container, styles.avoidView]} keyboardVerticalOffset={-500} behavior='padding'>
@@ -60,7 +62,7 @@ class LoginPage extends Component {
             <View style={styles.nextArrowWrapper}>
               <NextArrowButton
                 style={styles.nextArrowButton}
-                handleNextButton={this.onNextButtonPressed}
+                handleNextButton={this._onNextButtonPressed}
               />
             </View>
           </View>
@@ -80,12 +82,13 @@ class LoginPage extends Component {
     })
   }
 
-  onNextButtonPressed(){
+  _onNextButtonPressed = async () => {
     const email = this.state.email;
     const password = this.state.password;
 
-    if(email === 'hello@example.com' && password==='helloworld'){
-      this.props.navigation.navigate('home')
+    if(email.toLowerCase() === 'hello@example.com' && password==='helloworld'){
+      await AsyncStorage.setItem('signedIn', 'true');
+      this.props.navigation.navigate('App');
     }else{
       Alert.alert(
         'Sorry',
@@ -132,6 +135,4 @@ const styles = StyleSheet.create({
   }
 });
 
-
-
-export default LoginPage;
+export default withNavigation(LoginPage);

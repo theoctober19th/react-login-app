@@ -11,21 +11,29 @@ For Navigation: [https://github.com/react-navigation/react-navigation](https://g
 
 Right now, the data is static. I created this only to learn about state, props, navigation and UI components, so I did not spend time to make it dynamic.
 
-Try with these credentials:
-**email**: hello@example.com
+Try with these credentials:  
+**email**: hello@example.com  
 **password**: helloworld
 
-## Screenshots
-**Android**
+Happy Learning! 🤓
 
-![](/screenshots/android1.png)
-![](/screenshots/android2.png)
-![](/screenshots/android3.png)
+## Screenshots
 
 **iOS**
 
 ![](/screenshots/ios1.png)
 ![](/screenshots/ios2.png)
 ![](/screenshots/ios3.png)
+![](/screenshots/ios4.png)
+![](/screenshots/ios5.png)
+![](/screenshots/ios6.png)
 
-Happy Learning! 🤓
+
+**Android**
+
+![](/screenshots/android1.png)
+![](/screenshots/android2.png)
+![](/screenshots/android3.png)
+![](/screenshots/android4.png)
+![](/screenshots/android5.png)
+![](/screenshots/android6.png)
